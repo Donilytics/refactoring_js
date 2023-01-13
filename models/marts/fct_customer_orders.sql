@@ -41,7 +41,7 @@ customer_order_history as (
         ) / nullif(
             count(
                 case
-                    when orders.order_value_dollars 
+                    when orders.order_value_dollars is not null
                     then 1
                 end
             ),
