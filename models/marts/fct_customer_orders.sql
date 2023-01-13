@@ -63,16 +63,16 @@ add_avg_order_values as (
 
 final as (
     select
-        orders.order_id,
-        orders.customer_id,
+        order_id,
+        customer_id,
         customers.surname,
         customers.givenname,
         customer_first_order_date as first_order_date,
         customer_order_count as order_count,
         customer_total_lifetime_value as total_lifetime_value,
-        orders.order_status,
-        orders.payment_status,
-        orders.order_value_dollars
+        order_status,
+        payment_status,
+        order_value_dollars
     from add_avg_order_values
 )
 
