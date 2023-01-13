@@ -74,14 +74,14 @@ customer_order_history as (
     from orders
 
     inner join customers
-        on orders.customer_id = customers.customers_id
+        on orders.customer_id = customers.customer_id
 
     left outer join payments
         on orders.order_id = payments.order_id
 
     where orders.order_status not in ('pending') and payments.payment_status != 'fail'
 
-    group by customers.customers_id, customers.full_name, customers.surname, customers.givenname
+    group by customers.customer_id, customers.full_name, customers.surname, customers.givenname
 
 ),
 
@@ -102,7 +102,7 @@ final as (
     from orders
 
     inner join customers
-        on orders.customer_id = customers.customers_id
+        on orders.customer_id = customers.customer_id
 
     inner join customer_order_history
         on orders.customer_id = customer_order_history.customer_id
