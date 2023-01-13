@@ -71,7 +71,7 @@ customer_order_history as (
         ) as avg_non_returned_order_value,
         array_agg(distinct orders.order_id) as order_ids
 
-    from a
+    from orders
 
     inner join customers
         on orders.customer_id = customers.customers_id
