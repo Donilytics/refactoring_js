@@ -37,9 +37,7 @@ a as (
 ),
 
 b as (
-    select
-        *,
-        first_name || ' ' || last_name as name
+    select *
     from customers
 ),
 
